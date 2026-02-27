@@ -230,6 +230,7 @@ color: rgba(142, 36, 36, 1);
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .colaboradores {
     background-color: #C3191908;
     padding: 4rem;
@@ -276,6 +277,8 @@ color: rgba(142, 36, 36, 1);
     text-align: center;
     margin: 30px;
 =======
+=======
+>>>>>>> Stashed changes
 
 .model {
     display: flex;
@@ -283,5 +286,8 @@ color: rgba(142, 36, 36, 1);
     justify-content: start;
     gap: 2rem;
      border: none !important;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
