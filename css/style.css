@@ -223,12 +223,13 @@ color: rgba(142, 36, 36, 1);
 
 .vagas-conteiner div{
     background-color: rgba(255, 255, 255, 1);
-    padding: 20px;
+    padding: 20px 60px 20px 10px;
     margin: 12px;
     border: 1px solid rgba(234, 236, 240, 1);
     border-radius: 16px;
 }
 
+<<<<<<< Updated upstream
 .colaboradores {
     background-color: #C3191908;
     padding: 4rem;
@@ -274,4 +275,13 @@ color: rgba(142, 36, 36, 1);
     color: #101828;
     text-align: center;
     margin: 30px;
+=======
+
+.model {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 2rem;
+     border: none !important;
+>>>>>>> Stashed changes
 }
