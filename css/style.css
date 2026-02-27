@@ -17,9 +17,7 @@
 }
 
 /* Reset básico */
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -46,7 +44,7 @@ a {
     text-decoration: none;
 }
 
-/* Rótulo vermelho pequeno reutilizável em várias seções */
+/* Rótulo vermelho reutilizável */
 .rotulo {
     display: inline-block;
     font-size: 0.875rem;
@@ -54,14 +52,14 @@ a {
     color: var(--vermelho);
 }
 
-/* Variação com fundo em pílula */
-.rotulo--fundo {
+/* Variação do rótulo com fundo em pílula */
+.rotulo.destaque {
     background: var(--vermelho-claro);
     padding: 6px 14px;
     border-radius: 999px;
 }
 
-/* Estilo base para todos os botões */
+/* Estilo base compartilhado entre os botões */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -78,22 +76,22 @@ a {
 }
 
 /* Botão transparente para ação secundária */
-.btn--fantasma {
+.btn.fantasma {
     color: var(--suave);
     background: transparent;
 }
 
-.btn--fantasma:hover {
+.btn.fantasma:hover {
     color: var(--escuro);
 }
 
 /* Botão vermelho para ação principal */
-.btn--primario {
+.btn.primario {
     background: var(--vermelho);
     color: var(--branco);
 }
 
-.btn--primario:hover {
+.btn.primario:hover {
     opacity: 0.88;
 }
 
@@ -109,7 +107,7 @@ a {
     z-index: 100;
 }
 
-/* Barra de navegação centralizada com largura máxima */
+/* Barra de navegação centralizada */
 .nav {
     max-width: var(--largura-max);
     margin: 0 auto;
@@ -120,59 +118,60 @@ a {
     gap: 32px;
 }
 
-/* Logotipo: ícone ao lado do nome */
-.nav__logo {
+/* Logo: ícone ao lado do nome da empresa */
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
 }
 
-.nav__logo img {
+.logo img {
     width: 28px;
     height: 28px;
 }
 
-.nav__logo span {
+.logo span {
     font-size: 1.125rem;
     font-weight: 700;
     color: var(--medio);
 }
 
-/* Links de navegação centralizados */
-.nav__links {
+/* Links de navegação alinhados à esquerda */
+.menu {
     display: flex;
     align-items: center;
     gap: 28px;
-    margin-left: auto;
+    margin-right: auto;
 }
 
-.nav__links a {
+.menu a {
     font-size: 0.9375rem;
     color: var(--suave);
     font-weight: 500;
+    min-width: 77.5px;
     transition: color 0.2s;
 }
 
-.nav__links a:hover {
+.menu a:hover {
     color: var(--escuro);
 }
 
-/* Botões de acesso à conta, ancorados à direita */
-.nav__acoes {
+/* Botões de conta ancorados à direita */
+.acoes {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
 }
 
-/* Espaço para não ficar atrás do header fixo */
+/* Empurra o conteúdo para baixo do header fixo */
 main {
     padding-top: var(--altura-nav);
 }
 
-/* Seção "Sobre nós" com texto centralizado */
-.apresentacao {
+/* Seção "Sobre nós" centralizada */
+.sobre {
     max-width: 700px;
     margin: 0 auto;
     padding: 80px 24px 64px;
@@ -183,20 +182,19 @@ main {
     gap: 20px;
 }
 
-.apresentacao h1 {
+.sobre h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: var(--escuro);
     line-height: 1.2;
 }
 
-.apresentacao__descricao {
+.sobre p {
     font-size: 1.0625rem;
     color: var(--suave);
     max-width: 560px;
 }
 
-/* Seção de métricas com fundo levemente cinza */
+/* Seção de métricas com fundo cinza claro */
 .metricas {
     background: #FAFAFA;
     border-top: 1px solid var(--borda);
@@ -204,8 +202,8 @@ main {
     padding: 56px 24px;
 }
 
-/* Grade de 4 colunas para os números da empresa */
-.metricas__grade {
+/* Grade de 4 colunas para os números */
+.metricas-grade {
     max-width: var(--largura-max);
     margin: 0 auto;
     display: grid;
@@ -213,7 +211,7 @@ main {
     gap: 32px;
 }
 
-/* Número em destaque vermelho */
+/* Número grande em destaque vermelho */
 .metrica strong {
     font-size: 2.5rem;
     font-weight: 700;
@@ -224,7 +222,6 @@ main {
 .metrica h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--escuro);
     margin: 10px 0 6px;
 }
 
@@ -243,8 +240,8 @@ main {
     gap: 48px;
 }
 
-/* Introdução da seção de vagas com imagem */
-.vagas__intro {
+/* Introdução com título, subtítulo e foto da equipe */
+.vagas-intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,16 +249,16 @@ main {
     gap: 16px;
 }
 
-.vagas__intro h2 {
+.vagas-intro h2 {
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 700;
 }
 
-.vagas__intro p {
+.vagas-intro p {
     color: var(--suave);
 }
 
-.vagas__intro img {
+.vagas-intro img {
     width: 100%;
     max-height: 340px;
     object-fit: cover;
@@ -269,15 +266,15 @@ main {
     margin-top: 16px;
 }
 
-/* Agrupa os cards por categoria de vaga */
-.vagas__lista {
+/* Agrupa os cards por área */
+.vagas-lista {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-/* Título da categoria com linha divisória */
-.vagas__categoria h3 {
+/* Título da área com linha divisória */
+.categoria h3 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 16px;
@@ -285,30 +282,28 @@ main {
     border-bottom: 1px solid var(--borda);
 }
 
-/* Card individual de vaga */
-.vaga-card {
+/* Card individual de uma vaga */
+.vaga {
     padding: 20px;
     border: 1px solid var(--borda);
     border-radius: var(--arredondado);
-    background: var(--branco);
     box-shadow: var(--sombra);
     margin-bottom: 12px;
     transition: box-shadow 0.2s;
 }
 
-.vaga-card:hover {
+.vaga:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.vaga-card h4 {
+.vaga h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--escuro);
     margin-bottom: 10px;
 }
 
-/* Linha com regime e faixa salarial */
-.vaga-card__info {
+/* Regime e salário lado a lado */
+.vaga-info {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -318,8 +313,6 @@ main {
 
 /* Tag de regime de contratação */
 .tag {
-    background: var(--vermelho-claro);
-    color: var(--vermelho);
     padding: 3px 10px;
     border-radius: 999px;
     font-size: 0.8125rem;
@@ -334,8 +327,8 @@ main {
     padding: 80px 24px;
 }
 
-/* Texto introdutório do depoimento centralizado */
-.depoimento__texto {
+/* Texto do depoimento centralizado */
+.depoimento-texto {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 48px;
@@ -344,24 +337,24 @@ main {
     gap: 16px;
 }
 
-.depoimento__texto h2 {
+.depoimento-texto h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 700;
 }
 
-.depoimento__texto p {
+.depoimento-texto p {
     color: var(--suave);
 }
 
-/* Card com foto, nome e cargo do colaborador */
-.depoimento__card {
+/* Foto, nome e cargo do colaborador */
+.depoimento-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-.depoimento__card img {
+.depoimento-card img {
     width: 72px;
     height: 72px;
     border-radius: 50%;
@@ -369,23 +362,22 @@ main {
     border: 3px solid var(--borda);
 }
 
-.depoimento__card strong {
+.depoimento-card strong {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--escuro);
 }
 
-.depoimento__card span {
+.depoimento-card span {
     font-size: 0.9375rem;
     color: var(--suave);
 }
 
-/* Seção de cadastro para receber vagas */
+/* Seção de inscrição por e-mail */
 .newsletter {
     padding: 80px 24px;
 }
 
-.newsletter__conteudo {
+.newsletter-conteudo {
     max-width: 520px;
     margin: 0 auto;
     text-align: center;
@@ -395,24 +387,24 @@ main {
     gap: 16px;
 }
 
-.newsletter__conteudo h2 {
+.newsletter-conteudo h2 {
     font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: 700;
 }
 
-.newsletter__conteudo p {
+.newsletter-conteudo p {
     color: var(--suave);
 }
 
-/* Formulário em linha: input + botão lado a lado */
-.newsletter__formulario {
+/* Input e botão lado a lado */
+.newsletter-form {
     display: flex;
     gap: 10px;
     width: 100%;
     margin-top: 8px;
 }
 
-.newsletter__formulario input {
+.newsletter-form input {
     flex: 1;
     height: 48px;
     padding: 0 16px;
@@ -425,46 +417,45 @@ main {
     transition: border-color 0.2s;
 }
 
-.newsletter__formulario input:focus {
+.newsletter-form input:focus {
     border-color: var(--vermelho);
 }
 
 /* Rodapé escuro com copyright */
 .rodape {
-    background: var(--escuro);
     padding: 32px 24px;
     text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--medio);
     font-size: 0.875rem;
 }
 
 /* Tablet: métricas em 2 colunas, formulário empilhado */
 @media (max-width: 768px) {
-    .metricas__grade {
+    .metricas-grade {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 
-    .newsletter__formulario {
+    .newsletter-form {
         flex-direction: column;
     }
 }
 
 /* Mobile: esconde menu, empilha métricas e info das vagas */
 @media (max-width: 520px) {
-    .nav__links {
+    .menu {
         display: none;
     }
 
-    .nav__acoes {
+    .acoes {
         margin-left: auto;
     }
 
-    .metricas__grade {
+    .metricas-grade {
         grid-template-columns: 1fr;
     }
 
-    .vaga-card__info {
+    .vaga-info {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;

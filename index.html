@@ -13,21 +13,21 @@
 
     <header class="cabecalho">
         <div class="nav">
-            <div class="nav__logo">
+            <div class="logo">
                 <img src="img/logo.svg" alt="Logo OptimusTech">
                 <span>OptimusTech</span>
             </div>
 
-            <nav class="nav__links">
+            <nav class="menu">
                 <a href="#home">Home</a>
                 <a href="#produtos">Produtos</a>
                 <a href="#recursos">Recursos</a>
                 <a href="#sobre">Sobre nós</a>
             </nav>
 
-            <div class="nav__acoes">
-                <a href="#" class="btn btn--fantasma">Entrar</a>
-                <a href="#" class="btn btn--primario">Cadastrar</a>
+            <div class="acoes">
+                <a href="#" class="btn fantasma">Entrar</a>
+                <a href="#" class="btn primario">Cadastrar</a>
             </div>
         </div>
     </header>
@@ -35,16 +35,16 @@
     <main>
 
         <!-- Sobre nós -->
-        <section class="apresentacao" id="sobre">
-            <p class="rotulo">sobre nós</p>
+        <section class="sobre" id="sobre">
+            <span class="rotulo">sobre nós</span>
             <h1>Por que somos diferentes?</h1>
-            <p class="apresentacao__descricao">Nós focamos nos detalhes de tudo que fazemos. Tudo para ajudar as
-                empresas de todo o mundo a se concentrarem naquilo que é realmente importante para elas.</p>
+            <p>Nós focamos nos detalhes de tudo que fazemos. Tudo para ajudar as empresas de todo o mundo a se
+                concentrarem naquilo que é realmente importante para elas.</p>
         </section>
 
         <!-- Métricas da empresa -->
         <section class="metricas">
-            <div class="metricas__grade">
+            <div class="metricas-grade">
                 <div class="metrica">
                     <strong>400+</strong>
                     <h3>Projetos concluídos</h3>
@@ -70,52 +70,52 @@
 
         <!-- Vagas de emprego -->
         <section class="vagas" id="vagas">
-            <div class="vagas__intro">
-                <p class="rotulo rotulo--fundo">Vagas abertas!</p>
+            <div class="vagas-intro">
+                <span class="rotulo destaque">Vagas abertas!</span>
                 <h2>Estamos procurando por talentos</h2>
                 <p>Somos uma equipe 100% remota com pessoas do Brasil inteiro.</p>
                 <img src="/img/vagas.jpg" alt="Equipe OptimusTech trabalhando">
             </div>
 
-            <div class="vagas__lista">
+            <div class="vagas-lista">
 
-                <div class="vagas__categoria">
+                <div class="categoria">
                     <h3>Design</h3>
-                    <div class="vaga-card">
+                    <div class="vaga">
                         <h4>Product Designer</h4>
-                        <div class="vaga-card__info">
+                        <div class="vaga-info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$7.000</span>
                         </div>
                     </div>
-                    <div class="vaga-card">
+                    <div class="vaga">
                         <h4>UX Designer</h4>
-                        <div class="vaga-card__info">
+                        <div class="vaga-info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$6.000</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="vagas__categoria">
+                <div class="categoria">
                     <h3>Desenvolvimento de Software</h3>
-                    <div class="vaga-card">
+                    <div class="vaga">
                         <h4>Desenvolvedor(a) iOS</h4>
-                        <div class="vaga-card__info">
+                        <div class="vaga-info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
                     </div>
-                    <div class="vaga-card">
+                    <div class="vaga">
                         <h4>Desenvolvedor(a) Front-end</h4>
-                        <div class="vaga-card__info">
+                        <div class="vaga-info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
                     </div>
-                    <div class="vaga-card">
+                    <div class="vaga">
                         <h4>Desenvolvedor(a) Back-end</h4>
-                        <div class="vaga-card__info">
+                        <div class="vaga-info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
@@ -127,13 +127,11 @@
 
         <!-- Depoimento de colaborador -->
         <section class="depoimento">
-            <div class="depoimento__texto">
-                <p class="rotulo">Depoimentos</p>
-                <h2>Veja o que nossos colaboradores falam sobre nós</h2>
-                <p>OptimusTech se importa com a saúde dos seus colaboradores e sempre procura dar todo tipo de auxílio
-                    possível.</p>
+            <div class="depoimento-texto">
+                <span class="rotulo">Veja o que nossos colaboradores falam sobre nós</span>
+                <h2>OptimusTech se importa com a saúde dos seus colaboradores e sempre procura nos dar todo tipo de auxílio possível</h2>
             </div>
-            <div class="depoimento__card">
+            <div class="depoimento-card">
                 <img src="/img/colab.jpg" alt="Júlia Castro">
                 <strong>Júlia Castro</strong>
                 <span>Desenvolvedora Web</span>
@@ -142,13 +140,12 @@
 
         <!-- Inscrição para receber vagas -->
         <section class="newsletter">
-            <div class="newsletter__conteudo">
-                <p class="rotulo">Oportunidades</p>
-                <h2>Inscreva-se para saber mais sobre vagas abertas!</h2>
-                <p>Somos uma equipe 100% remota com pessoas do Brasil inteiro.</p>
-                <div class="newsletter__formulario">
+            <div class="newsletter-conteudo">
+                <h2>Acompanhe as nossas oportunidades</h2>
+                <p>Seja o primeiro a saber quando novas vagas serão abertas!</p>
+                <div class="newsletter-form">
                     <input type="email" placeholder="Digite seu e-mail">
-                    <button type="button" class="btn btn--primario">Cadastrar</button>
+                    <button type="button" class="btn primario">Cadastrar</button>
                 </div>
             </div>
         </section>
