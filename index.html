@@ -5,33 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>OptimusTech</title>
 </head>
 
 <body>
 
-    <header class="header">
+    <header class="cabecalho">
         <div class="nav">
             <div class="nav__logo">
                 <img src="img/logo.svg" alt="Logo OptimusTech">
                 <span>OptimusTech</span>
             </div>
 
-            <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
-                <span></span><span></span><span></span>
-            </button>
-
-            <nav class="nav__links" id="navLinks">
+            <nav class="nav__links">
                 <a href="#home">Home</a>
                 <a href="#produtos">Produtos</a>
                 <a href="#recursos">Recursos</a>
                 <a href="#sobre">Sobre nós</a>
             </nav>
 
-            <div class="nav__actions">
-                <a href="#" class="btn btn--ghost">Entrar</a>
-                <a href="#" class="btn btn--primary">Cadastrar</a>
+            <div class="nav__acoes">
+                <a href="#" class="btn btn--fantasma">Entrar</a>
+                <a href="#" class="btn btn--primario">Cadastrar</a>
             </div>
         </div>
     </header>
@@ -39,32 +35,32 @@
     <main>
 
         <!-- Sobre nós -->
-        <section class="hero" id="sobre">
-            <p class="label">sobre nós</p>
+        <section class="apresentacao" id="sobre">
+            <p class="rotulo">sobre nós</p>
             <h1>Por que somos diferentes?</h1>
-            <p class="hero__desc">Nós focamos nos detalhes de tudo que fazemos. Tudo para ajudar as empresas de todo o
-                mundo a se concentrarem naquilo que é realmente importante para elas.</p>
+            <p class="apresentacao__descricao">Nós focamos nos detalhes de tudo que fazemos. Tudo para ajudar as
+                empresas de todo o mundo a se concentrarem naquilo que é realmente importante para elas.</p>
         </section>
 
-        <!-- Métricas -->
-        <section class="metrics">
-            <div class="metrics__grid">
-                <div class="metric">
+        <!-- Métricas da empresa -->
+        <section class="metricas">
+            <div class="metricas__grade">
+                <div class="metrica">
                     <strong>400+</strong>
                     <h3>Projetos concluídos</h3>
                     <p>Nós ajudamos a construir mais de 400 projetos incríveis.</p>
                 </div>
-                <div class="metric">
+                <div class="metrica">
                     <strong>100+</strong>
                     <h3>Colaboradores</h3>
                     <p>Temos mais de 100 colaboradores no nosso time que se preocupam com nossos clientes.</p>
                 </div>
-                <div class="metric">
+                <div class="metrica">
                     <strong>20k</strong>
                     <h3>Downloads</h3>
                     <p>Nossos projetos disponíveis em lojas já foram baixados mais de 20.000 vezes.</p>
                 </div>
-                <div class="metric">
+                <div class="metrica">
                     <strong>500+</strong>
                     <h3>Reviews 5 estrelas</h3>
                     <p>Estamos orgulhosos de contar com mais de 500 reviews 5 estrelas em nossos produtos.</p>
@@ -72,103 +68,97 @@
             </div>
         </section>
 
-        <!-- Vagas -->
-        <section class="jobs" id="vagas">
-            <div class="jobs__intro">
-                <p class="label label--bg">Vagas abertas!</p>
+        <!-- Vagas de emprego -->
+        <section class="vagas" id="vagas">
+            <div class="vagas__intro">
+                <p class="rotulo rotulo--fundo">Vagas abertas!</p>
                 <h2>Estamos procurando por talentos</h2>
                 <p>Somos uma equipe 100% remota com pessoas do Brasil inteiro.</p>
                 <img src="/img/vagas.jpg" alt="Equipe OptimusTech trabalhando">
             </div>
 
-            <div class="jobs__list">
-                <div class="jobs__category">
+            <div class="vagas__lista">
+
+                <div class="vagas__categoria">
                     <h3>Design</h3>
-                    <div class="job-card">
+                    <div class="vaga-card">
                         <h4>Product Designer</h4>
-                        <div class="job-card__info">
+                        <div class="vaga-card__info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$7.000</span>
                         </div>
                     </div>
-                    <div class="job-card">
+                    <div class="vaga-card">
                         <h4>UX Designer</h4>
-                        <div class="job-card__info">
+                        <div class="vaga-card__info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$6.000</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="jobs__category">
+                <div class="vagas__categoria">
                     <h3>Desenvolvimento de Software</h3>
-                    <div class="job-card">
+                    <div class="vaga-card">
                         <h4>Desenvolvedor(a) iOS</h4>
-                        <div class="job-card__info">
+                        <div class="vaga-card__info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
                     </div>
-                    <div class="job-card">
+                    <div class="vaga-card">
                         <h4>Desenvolvedor(a) Front-end</h4>
-                        <div class="job-card__info">
+                        <div class="vaga-card__info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
                     </div>
-                    <div class="job-card">
+                    <div class="vaga-card">
                         <h4>Desenvolvedor(a) Back-end</h4>
-                        <div class="job-card__info">
+                        <div class="vaga-card__info">
                             <span class="tag">Full-time</span>
                             <span>Faixa salarial: R$8.000</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Depoimento -->
-        <section class="testimonial">
-            <div class="testimonial__text">
-                <p class="label">Depoimentos</p>
+        <!-- Depoimento de colaborador -->
+        <section class="depoimento">
+            <div class="depoimento__texto">
+                <p class="rotulo">Depoimentos</p>
                 <h2>Veja o que nossos colaboradores falam sobre nós</h2>
                 <p>OptimusTech se importa com a saúde dos seus colaboradores e sempre procura dar todo tipo de auxílio
                     possível.</p>
             </div>
-            <div class="testimonial__card">
+            <div class="depoimento__card">
                 <img src="/img/colab.jpg" alt="Júlia Castro">
                 <strong>Júlia Castro</strong>
                 <span>Desenvolvedora Web</span>
             </div>
         </section>
 
-        <!-- Newsletter -->
+        <!-- Inscrição para receber vagas -->
         <section class="newsletter">
-            <div class="newsletter__inner">
-                <p class="label">Oportunidades</p>
+            <div class="newsletter__conteudo">
+                <p class="rotulo">Oportunidades</p>
                 <h2>Inscreva-se para saber mais sobre vagas abertas!</h2>
                 <p>Somos uma equipe 100% remota com pessoas do Brasil inteiro.</p>
-                <div class="newsletter__form">
+                <div class="newsletter__formulario">
                     <input type="email" placeholder="Digite seu e-mail">
-                    <button type="button" class="btn btn--primary">Cadastrar</button>
+                    <button type="button" class="btn btn--primario">Cadastrar</button>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="footer">
+    <footer class="rodape">
         <p>© 2023 OptimusTech. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        const toggle = document.getElementById('navToggle');
-        const links = document.getElementById('navLinks');
-        toggle.addEventListener('click', () => {
-            links.classList.toggle('open');
-            toggle.classList.toggle('active');
-        });
-    </script>
 </body>
 
 </html>

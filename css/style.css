@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
 
-/* ================================
-   RESET & VARIABLES
-================================ */
+/* Variáveis globais */
+:root {
+    --vermelho: #8E2424;
+    --vermelho-claro: rgba(142, 36, 36, 0.07);
+    --escuro: #101828;
+    --medio: #3A404E;
+    --suave: #667085;
+    --borda: #EAECF0;
+    --branco: #ffffff;
+    --fonte: 'Sora', sans-serif;
+    --arredondado: 12px;
+    --sombra: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
+    --largura-max: 1100px;
+    --altura-nav: 72px;
+}
+
+/* Reset básico */
 *,
 *::before,
 *::after {
@@ -11,30 +25,15 @@
     box-sizing: border-box;
 }
 
-:root {
-    --red: #8E2424;
-    --red-light: rgba(142, 36, 36, 0.07);
-    --dark: #101828;
-    --mid: #3A404E;
-    --muted: #667085;
-    --border: #EAECF0;
-    --white: #ffffff;
-    --font: 'Sora', sans-serif;
-    --radius: 12px;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
-    --max: 1100px;
-    --nav-h: 72px;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font);
+    font-family: var(--fonte);
     font-size: 1rem;
-    color: var(--dark);
-    background: var(--white);
+    color: var(--escuro);
+    background: var(--branco);
     line-height: 1.6;
 }
 
@@ -47,71 +46,72 @@ a {
     text-decoration: none;
 }
 
-/* ================================
-   UTILITIES
-================================ */
-.label {
+/* Rótulo vermelho pequeno reutilizável em várias seções */
+.rotulo {
     display: inline-block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--red);
+    color: var(--vermelho);
 }
 
-.label--bg {
-    background: var(--red-light);
+/* Variação com fundo em pílula */
+.rotulo--fundo {
+    background: var(--vermelho-claro);
     padding: 6px 14px;
     border-radius: 999px;
 }
 
+/* Estilo base para todos os botões */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    border-radius: var(--radius);
-    font-family: var(--font);
+    border-radius: var(--arredondado);
+    font-family: var(--fonte);
     font-size: 0.9375rem;
     font-weight: 500;
     cursor: pointer;
     border: none;
-    transition: opacity 0.2s, background 0.2s;
+    transition: opacity 0.2s, color 0.2s;
     white-space: nowrap;
 }
 
-.btn--ghost {
-    color: var(--muted);
+/* Botão transparente para ação secundária */
+.btn--fantasma {
+    color: var(--suave);
     background: transparent;
 }
 
-.btn--ghost:hover {
-    color: var(--dark);
+.btn--fantasma:hover {
+    color: var(--escuro);
 }
 
-.btn--primary {
-    background: var(--red);
-    color: var(--white);
+/* Botão vermelho para ação principal */
+.btn--primario {
+    background: var(--vermelho);
+    color: var(--branco);
 }
 
-.btn--primary:hover {
+.btn--primario:hover {
     opacity: 0.88;
 }
 
-/* ================================
-   HEADER / NAV
-================================ */
-.header {
+/* Header fixo no topo com borda inferior */
+.cabecalho {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: var(--nav-h);
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
+    height: var(--altura-nav);
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
     z-index: 100;
 }
 
+/* Barra de navegação centralizada com largura máxima */
 .nav {
-    max-width: var(--max);
+    max-width: var(--largura-max);
     margin: 0 auto;
     height: 100%;
     padding: 0 24px;
@@ -120,6 +120,7 @@ a {
     gap: 32px;
 }
 
+/* Logotipo: ícone ao lado do nome */
 .nav__logo {
     display: flex;
     align-items: center;
@@ -135,9 +136,10 @@ a {
 .nav__logo span {
     font-size: 1.125rem;
     font-weight: 700;
-    color: var(--mid);
+    color: var(--medio);
 }
 
+/* Links de navegação centralizados */
 .nav__links {
     display: flex;
     align-items: center;
@@ -147,67 +149,30 @@ a {
 
 .nav__links a {
     font-size: 0.9375rem;
-    color: var(--muted);
+    color: var(--suave);
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav__links a:hover {
-    color: var(--dark);
+    color: var(--escuro);
 }
 
-.nav__actions {
+/* Botões de acesso à conta, ancorados à direita */
+.nav__acoes {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
 }
 
-/* Hamburger */
-.nav__toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-    margin-left: auto;
-}
-
-.nav__toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--dark);
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-.nav__toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.nav__toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.nav__toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-/* ================================
-   MAIN OFFSET
-================================ */
+/* Espaço para não ficar atrás do header fixo */
 main {
-    padding-top: var(--nav-h);
+    padding-top: var(--altura-nav);
 }
 
-/* ================================
-   HERO / SOBRE NÓS
-================================ */
-.hero {
+/* Seção "Sobre nós" com texto centralizado */
+.apresentacao {
     max-width: 700px;
     margin: 0 auto;
     padding: 80px 24px 64px;
@@ -218,61 +183,59 @@ main {
     gap: 20px;
 }
 
-.hero h1 {
+.apresentacao h1 {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: var(--dark);
+    color: var(--escuro);
     line-height: 1.2;
 }
 
-.hero__desc {
+.apresentacao__descricao {
     font-size: 1.0625rem;
-    color: var(--muted);
+    color: var(--suave);
     max-width: 560px;
 }
 
-/* ================================
-   METRICS
-================================ */
-.metrics {
+/* Seção de métricas com fundo levemente cinza */
+.metricas {
     background: #FAFAFA;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
     padding: 56px 24px;
 }
 
-.metrics__grid {
-    max-width: var(--max);
+/* Grade de 4 colunas para os números da empresa */
+.metricas__grade {
+    max-width: var(--largura-max);
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
 }
 
-.metric strong {
+/* Número em destaque vermelho */
+.metrica strong {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--red);
+    color: var(--vermelho);
     display: block;
 }
 
-.metric h3 {
+.metrica h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--escuro);
     margin: 10px 0 6px;
 }
 
-.metric p {
+.metrica p {
     font-size: 0.9375rem;
-    color: var(--muted);
+    color: var(--suave);
 }
 
-/* ================================
-   JOBS
-================================ */
-.jobs {
-    max-width: var(--max);
+/* Seção de vagas com largura máxima */
+.vagas {
+    max-width: var(--largura-max);
     margin: 0 auto;
     padding: 80px 24px;
     display: flex;
@@ -280,7 +243,8 @@ main {
     gap: 48px;
 }
 
-.jobs__intro {
+/* Introdução da seção de vagas com imagem */
+.vagas__intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -288,16 +252,16 @@ main {
     gap: 16px;
 }
 
-.jobs__intro h2 {
+.vagas__intro h2 {
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     font-weight: 700;
 }
 
-.jobs__intro p {
-    color: var(--muted);
+.vagas__intro p {
+    color: var(--suave);
 }
 
-.jobs__intro img {
+.vagas__intro img {
     width: 100%;
     max-height: 340px;
     object-fit: cover;
@@ -305,74 +269,73 @@ main {
     margin-top: 16px;
 }
 
-.jobs__list {
+/* Agrupa os cards por categoria de vaga */
+.vagas__lista {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.jobs__category h3 {
+/* Título da categoria com linha divisória */
+.vagas__categoria h3 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--borda);
 }
 
-.job-card {
+/* Card individual de vaga */
+.vaga-card {
     padding: 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--white);
-    box-shadow: var(--shadow);
+    border: 1px solid var(--borda);
+    border-radius: var(--arredondado);
+    background: var(--branco);
+    box-shadow: var(--sombra);
     margin-bottom: 12px;
     transition: box-shadow 0.2s;
 }
 
-.job-card:hover {
+.vaga-card:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.job-card h4 {
+.vaga-card h4 {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--escuro);
     margin-bottom: 10px;
 }
 
-.job-card__info {
+/* Linha com regime e faixa salarial */
+.vaga-card__info {
     display: flex;
     align-items: center;
     gap: 16px;
-    color: var(--muted);
+    color: var(--suave);
     font-size: 0.9375rem;
 }
 
+/* Tag de regime de contratação */
 .tag {
-    background: var(--red-light);
-    color: var(--red);
+    background: var(--vermelho-claro);
+    color: var(--vermelho);
     padding: 3px 10px;
     border-radius: 999px;
     font-size: 0.8125rem;
     font-weight: 600;
 }
 
-/* ================================
-   TESTIMONIAL
-================================ */
-.testimonial {
+/* Seção de depoimento com fundo cinza claro */
+.depoimento {
     background: #FAFAFA;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
     padding: 80px 24px;
 }
 
-.testimonial>* {
-    max-width: var(--max);
-    margin: 0 auto;
-}
-
-.testimonial__text {
+/* Texto introdutório do depoimento centralizado */
+.depoimento__texto {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 48px;
@@ -381,168 +344,127 @@ main {
     gap: 16px;
 }
 
-.testimonial__text h2 {
+.depoimento__texto h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
     font-weight: 700;
 }
 
-.testimonial__text p {
-    color: var(--muted);
+.depoimento__texto p {
+    color: var(--suave);
 }
 
-.testimonial__card {
+/* Card com foto, nome e cargo do colaborador */
+.depoimento__card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-.testimonial__card img {
+.depoimento__card img {
     width: 72px;
     height: 72px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--border);
+    border: 3px solid var(--borda);
 }
 
-.testimonial__card strong {
+.depoimento__card strong {
     font-size: 1rem;
     font-weight: 600;
-    color: var(--dark);
+    color: var(--escuro);
 }
 
-.testimonial__card span {
+.depoimento__card span {
     font-size: 0.9375rem;
-    color: var(--muted);
+    color: var(--suave);
 }
 
-/* ================================
-   NEWSLETTER
-================================ */
+/* Seção de cadastro para receber vagas */
 .newsletter {
     padding: 80px 24px;
 }
 
-.newsletter__inner {
+.newsletter__conteudo {
     max-width: 520px;
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    gap: 16px;
 }
 
-.newsletter__inner h2 {
+.newsletter__conteudo h2 {
     font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: 700;
 }
 
-.newsletter__inner p {
-    color: var(--muted);
+.newsletter__conteudo p {
+    color: var(--suave);
 }
 
-.newsletter__form {
+/* Formulário em linha: input + botão lado a lado */
+.newsletter__formulario {
     display: flex;
     gap: 10px;
     width: 100%;
     margin-top: 8px;
 }
 
-.newsletter__form input {
+.newsletter__formulario input {
     flex: 1;
     height: 48px;
     padding: 0 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-family: var(--font);
+    border: 1px solid var(--borda);
+    border-radius: var(--arredondado);
+    font-family: var(--fonte);
     font-size: 0.9375rem;
-    color: var(--dark);
+    color: var(--escuro);
     outline: none;
     transition: border-color 0.2s;
 }
 
-.newsletter__form input:focus {
-    border-color: var(--red);
+.newsletter__formulario input:focus {
+    border-color: var(--vermelho);
 }
 
-/* ================================
-   FOOTER
-================================ */
-.footer {
-    background: var(--dark);
+/* Rodapé escuro com copyright */
+.rodape {
+    background: var(--escuro);
     padding: 32px 24px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.875rem;
 }
 
-/* ================================
-   RESPONSIVE
-================================ */
-@media (max-width: 900px) {
-    .metrics__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 680px) {
-
-    /* Nav mobile */
-    .nav__links {
-        display: none;
-        position: absolute;
-        top: var(--nav-h);
-        left: 0;
-        right: 0;
-        background: var(--white);
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        border-bottom: 1px solid var(--border);
-        padding: 8px 0;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .nav__links.open {
-        display: flex;
-    }
-
-    .nav__links a {
-        width: 100%;
-        padding: 14px 24px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav__actions {
-        display: none;
-    }
-
-    .nav__toggle {
-        display: flex;
-    }
-
-    .metrics__grid {
+/* Tablet: métricas em 2 colunas, formulário empilhado */
+@media (max-width: 768px) {
+    .metricas__grade {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
 
-    .newsletter__form {
+    .newsletter__formulario {
         flex-direction: column;
-    }
-
-    .newsletter__form input,
-    .newsletter__form .btn {
-        width: 100%;
     }
 }
 
-@media (max-width: 420px) {
-    .metrics__grid {
+/* Mobile: esconde menu, empilha métricas e info das vagas */
+@media (max-width: 520px) {
+    .nav__links {
+        display: none;
+    }
+
+    .nav__acoes {
+        margin-left: auto;
+    }
+
+    .metricas__grade {
         grid-template-columns: 1fr;
     }
 
-    .job-card__info {
+    .vaga-card__info {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
