@@ -229,8 +229,18 @@ color: rgba(142, 36, 36, 1);
     border-radius: 16px;
 }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+.model {
+    display: flex;
+    align-items: end;
+    justify-content: start;
+    gap: 2rem;
+     border: none !important;
+
+}
+
+
+
+
 .colaboradores {
     background-color: #C3191908;
     padding: 4rem;
@@ -276,18 +286,5 @@ color: rgba(142, 36, 36, 1);
     color: #101828;
     text-align: center;
     margin: 30px;
-=======
-=======
->>>>>>> Stashed changes
-
-.model {
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    gap: 2rem;
-     border: none !important;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
+
