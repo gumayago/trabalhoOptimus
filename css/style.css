@@ -1,350 +1,463 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
 
-*{
+/* Variáveis globais */
+:root {
+    --vermelho: #8E2424;
+    --vermelho-claro: rgba(142, 36, 36, 0.07);
+    --escuro: #101828;
+    --medio: #3A404E;
+    --suave: #667085;
+    --borda: #EAECF0;
+    --branco: #ffffff;
+    --fonte: 'Sora', sans-serif;
+    --arredondado: 12px;
+    --sombra: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
+    --largura-max: 1100px;
+    --altura-nav: 72px;
+}
+
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    transition: 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: rgba(255, 255, 255, 1);
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-
-header{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.container{
-    width: 100%;
-    height: 80px;
-    justify-content: space-evenly;
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-    background-color: rgba(255, 255, 255, 1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.logo{
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-}
-.logo img{
-    height: 1.5rem;
-    width: 1.5rem;
-}
-.logo h1{
-    font-size: 1.5em;
-    color: rgba(58, 64, 78, 1);
-}
-
-.content{
-    display: flex;
-    gap: 40px;
-    
-}
-.content a{
+    font-family: var(--fonte);
     font-size: 1rem;
+    color: var(--escuro);
+    background: var(--branco);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
     text-decoration: none;
-    color: rgba(102, 112, 133, 1);
-    min-width: 85px;
-
 }
 
-#fantasma{
-    width: 8.8rem;
-}
-
-button{
-    border: none;
-}
-.btn{
-    display: flex;
-    gap: 8px;
-
-}
-.btn a{
-    display: flex;
-    border-radius: 8px;
-    padding: 24px;
-     padding: 1rem ;
-    border: none;
-    border-radius: 8px;
-     align-items: center;
-     text-decoration: none;
-      height: 44px;
-}
-
-.content a:hover, .btn a:hover {
+/* Rótulo vermelho reutilizável */
+.rotulo {
+    display: inline-block;
+    font-size: 0.875rem;
     font-weight: 600;
-    color: black;
-    text-decoration: underline;
-} 
-
-#entrar{
-    color: rgba(102, 112, 133, 1);
+    color: var(--vermelho);
 }
 
-#cadastrar{
-    background-color: rgba(142, 36, 36, 1);
-    color: rgba(255, 255, 255, 1);
+/* Variação do rótulo com fundo em pílula */
+.rotulo.destaque {
+    background: var(--vermelho-claro);
+    padding: 6px 14px;
+    border-radius: 999px;
 }
 
-/* ============================================================================================================================== */
-/* sobre nos */
-.cabecalho {
-    display: flex;
-    flex-direction: column;
+/* Estilo base compartilhado entre os botões */
+.btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 32px;
-    height: 407px;
-}
-
-#sobreNos{
-font-size: 1rem;
-font-weight: 600;
-color: rgba(142, 36, 36, 1);
-}
-
-#pergunta {
-    font-size: 3rem;
-    font-weight: 600;
-    color: rgba(16, 24, 40, 1);
-    text-align: center;
-}
-
-#resposta {
-    text-align: center;
-    font-size: 1.2rem ;
-    font-weight: 400;
-    color:  rgba(102, 112, 133, 1);
-}
-/* ============================================================================================================================== */
-/* card */
-.metrica {
-    display: flex;
-    justify-content: center;
-    height: 288px;
-}
-
-.card{
-    display: flex;
-    gap: 32px;
-    max-width: 65vw;
-}
-
-.cards{
-    width: 280px;
-    height: 192px;
-}
-
-.titulo{
-    font-size: 3rem;
-    color: rgba(142, 36, 36, 1);
-    font-weight: 600;
-}
-
-.subtitulo{
-    font-size: 1rem;
-    color: rgba(16, 24, 40, 1);
-    margin: 1rem 0;
-}
-
-.conteudo{
-    font-size: 1rem;
-    color: rgba(102, 112, 133, 1);
-    text-align:start;
-}
-
-/* -------- */
-.vagas {
-    height: 1798px;
-    margin: 6rem 0;
-}
-
-.talentos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-.talentos h2 {
-    font-size: 1rem;
-    color: rgba(142, 36, 36, 1);
-    padding: 12px;
-    background-color: rgba(142, 36, 36, 0.05);
-    border-radius: 16px;
-}
-
-.talentos h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
-}
-
-.talentos p {
-    font-size: 1rem;
-    color: rgba(102, 112, 133, 1);
-}
-
-.talentos img {
-    height: 30vw;
-    width: 75vw;
-    object-fit: cover;
-    border-radius: 25px;
-    margin: 3rem 0;
-}
-
-.vagas-abertas {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px
-}
-
-.vagas-abertas h2 {
-    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: var(--arredondado);
+    font-family: var(--fonte);
+    font-size: 0.9375rem;
     font-weight: 500;
-}
-
-.vagas-abertas h3 {
-    font-size: 1rem;
-    color: rgba(16, 24, 40, 1);
-}
-
-.vagas-abertas p {
-    color: rgba(102, 112, 133, 1);
-}
-
-.vagas-conteiner div{
-    background-color: rgba(255, 255, 255, 1);
-    padding: 20px 60px 20px 10px;
-    margin: 12px;
-    border: 1px solid rgba(234, 236, 240, 1);
-    border-radius: 16px;
-}
-
-.model {
-    display: flex;
-    align-items: end;
-    justify-content: start;
-    gap: 2rem;
-     border: none !important;
-
-}
-
-
-
-
-.colaboradores {
-    background-color: #52c319;
-    padding: 4rem;
-    width: 75vw;
-    margin: 50px
-}
-
-.colaboradores-container img{
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.colaboradores-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.colaboradores-container h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(16, 24, 40, 1);
-}
-
-.colaboradores-container p {
-    font-size: 1rem;
-    color: rgba(102, 112, 133, 1);
-}
-
-.colaboradores-text h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #8E2424;
-    text-align: center;
-}
-
-.colaboradores-text h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #101828;
-    text-align: center;
-    margin: 30px;
-}
-
-.oportunidades {
-    background-color: #52c319;
-    padding: 4rem;
-    width: 75vw;
-    margin: 0 auto;
-}
-
-.oportunidades-text h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #8E2424;
-    text-align: center;
-}
-
-.oportunidades-text p {
-    font-size: 1rem;
-    color: #101828;
-    text-align: center;
-    margin: 30px;
-}
-
-.oportunidades-text form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-.oportunidades-text input {
-    flex-direction: row;
-    width: 200px;
-    height: 56px;
-    border-radius: 8px;
-    border: 1px solid rgba(234, 236, 240, 1);
-    padding: 12px;
-}
-
-.oportunidades-text label {
-    background-color: #8E2424;
-    padding: 12px;
-    border-radius: 8px;
-    color: #fff;
     cursor: pointer;
+    border: none;
+    transition: opacity 0.2s, color 0.2s;
+    white-space: nowrap;
 }
 
-footer {
-    width: 100%;
-    background-color: #101828;
-    padding: 2rem;
+/* Botão transparente para ação secundária */
+.btn.fantasma {
+    color: var(--suave);
+    background: transparent;
+}
+
+.btn.fantasma:hover {
+    color: var(--escuro);
+}
+
+/* Botão vermelho para ação principal */
+.btn.primario {
+    background: var(--vermelho);
+    color: var(--branco);
+}
+
+.btn.primario:hover {
+    opacity: 0.88;
+}
+
+/* Header fixo no topo com borda inferior */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--altura-nav);
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    z-index: 100;
+}
+
+/* Barra de navegação centralizada */
+.nav {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* Logo: ícone ao lado do nome da empresa */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 28px;
+    height: 28px;
+}
+
+.logo span {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--medio);
+}
+
+/* Links de navegação alinhados à esquerda */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-right: auto;
+}
+
+.menu a {
+    font-size: 0.9375rem;
+    color: var(--suave);
+    font-weight: 500;
+    min-width: 77.5px;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--escuro);
+}
+
+/* Botões de conta ancorados à direita */
+.acoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Empurra o conteúdo para baixo do header fixo */
+main {
+    padding-top: var(--altura-nav);
+}
+
+/* Seção "Sobre nós" centralizada */
+.sobre {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 24px 64px;
     text-align: center;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sobre h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.sobre p {
+    font-size: 1.0625rem;
+    color: var(--suave);
+    max-width: 560px;
+}
+
+/* Seção de métricas com fundo cinza claro */
+.metricas {
+    background: #FAFAFA;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    padding: 56px 24px;
+}
+
+/* Grade de 4 colunas para os números */
+.metricas-grade {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* Número grande em destaque vermelho */
+.metrica strong {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--vermelho);
+    display: block;
+}
+
+.metrica h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 10px 0 6px;
+}
+
+.metrica p {
+    font-size: 0.9375rem;
+    color: var(--suave);
+}
+
+/* Seção de vagas com largura máxima */
+.vagas {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+/* Introdução com título, subtítulo e foto da equipe */
+.vagas-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.vagas-intro h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+}
+
+.vagas-intro p {
+    color: var(--suave);
+}
+
+.vagas-intro img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 16px;
+}
+
+/* Agrupa os cards por área */
+.vagas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Título da área com linha divisória */
+.categoria h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borda);
+}
+
+/* Card individual de uma vaga */
+.vaga {
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: var(--arredondado);
+    box-shadow: var(--sombra);
+    margin-bottom: 12px;
+    transition: box-shadow 0.2s;
+}
+
+.vaga:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vaga h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Regime e salário lado a lado */
+.vaga-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--suave);
+    font-size: 0.9375rem;
+}
+
+/* Tag de regime de contratação */
+.tag {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+/* Seção de depoimento com fundo cinza claro */
+.depoimento {
+    background: #FAFAFA;
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+    padding: 80px 24px;
+}
+
+/* Texto do depoimento centralizado */
+.depoimento-texto {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.depoimento-texto h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 700;
+}
+
+.depoimento-texto p {
+    color: var(--suave);
+}
+
+/* Foto, nome e cargo do colaborador */
+.depoimento-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.depoimento-card img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--borda);
+}
+
+.depoimento-card strong {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.depoimento-card span {
+    font-size: 0.9375rem;
+    color: var(--suave);
+}
+
+/* Seção de inscrição por e-mail */
+.newsletter {
+    padding: 80px 24px;
+}
+
+.newsletter-conteudo {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.newsletter-conteudo h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+}
+
+.newsletter-conteudo p {
+    color: var(--suave);
+}
+
+/* Input e botão lado a lado */
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid var(--borda);
+    border-radius: var(--arredondado);
+    font-family: var(--fonte);
+    font-size: 0.9375rem;
+    color: var(--escuro);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--vermelho);
+}
+
+/* Rodapé escuro com copyright */
+.rodape {
+    padding: 32px 24px;
+    text-align: center;
+    color: var(--medio);
+    font-size: 0.875rem;
+}
+
+/* Tablet: métricas em 2 colunas, formulário empilhado */
+@media (max-width: 768px) {
+    .metricas-grade {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* Mobile: esconde menu, empilha métricas e info das vagas */
+@media (max-width: 520px) {
+    .menu {
+        display: none;
+    }
+
+    .acoes {
+        margin-left: auto;
+    }
+
+    .metricas-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .vaga-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
 }
