@@ -9,7 +9,6 @@
     --suave: #667085;
     --borda: #EAECF0;
     --branco: #ffffff;
-    --fonte: 'Sora', sans-serif;
     --arredondado: 12px;
     --sombra: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.05);
     --largura-max: 1100px;
@@ -21,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Sora', sans-serif;
 }
 
 html {
@@ -28,7 +28,6 @@ html {
 }
 
 body {
-    font-family: var(--fonte);
     font-size: 1rem;
     color: var(--escuro);
     background: var(--branco);
@@ -66,13 +65,11 @@ a {
     justify-content: center;
     padding: 10px 20px;
     border-radius: var(--arredondado);
-    font-family: var(--fonte);
     font-size: 0.9375rem;
     font-weight: 500;
     cursor: pointer;
     border: none;
     transition: opacity 0.2s, color 0.2s;
-    white-space: nowrap;
 }
 
 /* Botão transparente para ação secundária */
@@ -407,7 +404,6 @@ main {
     padding: 0 16px;
     border: 1px solid var(--borda);
     border-radius: var(--arredondado);
-    font-family: var(--fonte);
     font-size: 0.9375rem;
     color: var(--escuro);
     outline: none;
