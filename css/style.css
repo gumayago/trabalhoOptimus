@@ -30,7 +30,6 @@ html {
 body {
     font-size: 1rem;
     color: var(--escuro);
-    background: var(--branco);
     line-height: 1.6;
 }
 
@@ -75,7 +74,6 @@ a {
 /* Botão transparente para ação secundária */
 .btn.fantasma {
     color: var(--suave);
-    background: transparent;
 }
 
 .btn.fantasma:hover {
@@ -99,7 +97,6 @@ a {
     left: 0;
     right: 0;
     height: var(--altura-nav);
-    background: var(--branco);
     border-bottom: 1px solid var(--borda);
 }
 
@@ -190,7 +187,6 @@ main {
 
 /* Seção de métricas com fundo cinza claro */
 .metricas {
-    background: #FAFAFA;
     border-top: 1px solid var(--borda);
     border-bottom: 1px solid var(--borda);
     padding: 56px 24px;
@@ -315,7 +311,6 @@ main {
 
 /* Seção de depoimento com fundo cinza claro */
 .depoimento {
-    background: #FAFAFA;
     border-top: 1px solid var(--borda);
     border-bottom: 1px solid var(--borda);
     padding: 80px 24px;
